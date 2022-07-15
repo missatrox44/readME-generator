@@ -18,3 +18,7 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+
+//MIT
+//two more licenese
