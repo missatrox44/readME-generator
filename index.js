@@ -1,24 +1,65 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateMarkdown = require('./generateMarkdown')
+const generateREADME = require('./generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
-    {
-              type: 'input',
-              name: 'title',
-              message: 'What is the title of your project?',
-            },
-            {
-              type: 'input',
-              name: 'location',
-              message: 'Where are you from?',
-            },
+  {
+    type: 'input',
+    name: 'title',
+    message: 'What is the title of your project?',
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Provide a description of your project',
+  },
+  {
+    type: 'input',
+    name: 'tableOfContents',
+    message: 'List your Table of Contents using dashes',
+  },
+  {
+    type: 'input',
+    name: 'installation',
+    message: 'What packages need to be installed to run your program?',
+  },
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'Please input your directions for usage',
+  },
+  {
+    type: 'checkbox',
+    name: 'license',
+    message: 'Choose your license from the options below:',
+    choices: ['None', 'MIT', 'The Unlicense'],
+  },
+  {
+    type: 'input',
+    name: 'contributing',
+    message: 'List all collaborators',
+  },
+  {
+    type: 'input',
+    name: 'tests',
+    message: 'Write out any tests for this program',
+  },
+  {
+    type: 'input',
+    name: 'github',
+    message: 'Enter your github username.',
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Enter your email address.',
+  },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
 // function init() {
@@ -29,16 +70,16 @@ function writeToFile(fileName, data) {}
 // }
 
 function init() {
-    //ask all the questions for you readme
-    inquirer.prompt(questions)
+  //ask all the questions for you readme
+  inquirer.prompt(questions)
     .then((answers) => {
-    console.log(answers);
-    //make a readme string
-    let createREADME = generateMarkdown(answers);
-    console.log(createREADME);
-    fs.writeFile('generatedREADME.md', createREADME, function(err){
+      console.log(answers);
+      //make a readme string
+      let createREADME = generateREADME(answers);
+      console.log(createREADME);
+      fs.writeFile('generatedREADME.md', createREADME, function (err) {
 
-    })
+      })
     });
 };
 
@@ -48,57 +89,6 @@ init();
 
 
 
-// const inquirer = require('inquirer');
-// // import inquirer from 'inquirer';
-// const fs = require('fs');
-
-// // Use writeFileSync method to use promises instead of a callback function
-
-// const promptUser = () => {
-//   return inquirer.prompt([
-//     {
-//       type: 'input',
-//       name: 'name',
-//       message: 'What is your full name?',
-//     },
-//     {
-//       type: 'input',
-//       name: 'location',
-//       message: 'Where are you from?',
-//     },
-//     {
-//       type: 'input',
-//       name: 'hobby',
-//       message: 'What is your favorite hobby?',
-//     },
-//     {
-//       type: 'input',
-//       name: 'food',
-//       message: 'What is your favorite food?',
-//     },
-//     {
-//       type: 'input',
-//       name: 'github',
-//       message: 'Enter your GitHub Username',
-//     },
-//     {
-//       type: 'input',
-//       name: 'linkedin',
-//       message: 'Enter your LinkedIn URL.',
-//     },
-//   ]);
-// };
-
 // const generateHTML = ({ name, location, github, linkedin }) =>
 //   `markdown stuff`;
 
-// // Bonus using writeFileSync as a promise
-// const init = () => {
-//   promptUser()
-//     // Use writeFileSync method to use promises instead of a callback function
-//     .then((answers) => fs.writeFileSync('index.html', generateHTML(answers)))
-//     .then(() => console.log('Successfully wrote to index.html'))
-//     .catch((err) => console.error(err));
-// };
-
-// init();
