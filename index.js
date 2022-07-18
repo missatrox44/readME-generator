@@ -1,12 +1,11 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateREADME = require('./generateMarkdown')
-const path = require('path');
+const generateMarkdown = require('./generateMarkdown')
+// const path = require('path');
 
 // TODO: Create an array of questions for user input
 const questions = [
-// inquirer.prompt ([
   {
     type: 'input',
     name: 'title',
@@ -55,73 +54,28 @@ const questions = [
   },
 ]
 
-
-// function to write README file
-function writeToFile(fileName, data) {
-  return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
-
-// function to initialize program
+//function that builds README from answers
 function init() {
-  inquirer.prompt(questions).then((inquirerResponses)=>{
-      writeToFile("generatedREADME.md", generateREADME({...inquirerResponses}))
-  })
+  inquirer.prompt(questions)
+  .then((answers) => {
+  fs.writeFile('generatedREADME.md', generateMarkdown(answers), (err)=>
+      err ? console.log(err) : console.log('success!'))
+})
 }
 
 // Function call to initialize app
 init();
 
 
-//kyle code
-// generateREADME(data);
-
-// function init() {
-//   //ask all the questions for you readme
-//   inquirer.prompt(questions)
-//     .then((answers) => {
-//       console.log(answers);
-//       //make a readme string
-//       let createREADME = generateREADME(answers);
-//       console.log(createREADME);
-//       fs.writeFile('generatedREADME.md', createREADME, function (err) {
-
-//       })
-//     });
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// );
-
-// .then(answers) => {
-//   console.log(answers);
-//   fs.writeFile('generatedREADME.md', generateREADME(answers), (err)) =>
-//   err ? console.log(err) : console.log('Success!')
+// //alternate code using path
+// // function to write README file
+// function writeToFile(fileName, data) {
+//   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 // }
 
-
-// // TODO: Create a function to write README file
-// function writeToFile(fileName, data) { }
-
-// // TODO: Create a function to initialize app
-// // function init() {
-// //     inquirer.prompt(questions)
-// //     .then((answers) => fs.writeFileSync('README.md', generateREADME(answers)))
-// //     .then(() => console.log('Successfully wrote to README.md'))
-// //     .catch((err) => console.error(err));
-// // }
-
-
+// // function to initialize program
+// function init() {
+//   inquirer.prompt(questions).then((inquirerResponses)=>{
+//       writeToFile("generatedREADME.md", generateMarkdown({...inquirerResponses}))
+//   })
+// }
