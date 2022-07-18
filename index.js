@@ -5,6 +5,7 @@ const generateREADME = require('./generateMarkdown')
 
 // TODO: Create an array of questions for user input
 const questions = [
+// inquirer.prompt ([
   {
     type: 'input',
     name: 'title',
@@ -14,11 +15,6 @@ const questions = [
     type: 'input',
     name: 'description',
     message: 'Provide a description of your project',
-  },
-  {
-    type: 'input',
-    name: 'tableOfContents',
-    message: 'List your Table of Contents using dashes',
   },
   {
     type: 'input',
@@ -56,18 +52,9 @@ const questions = [
     name: 'email',
     message: 'Enter your email address.',
   },
-];
+]
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) { }
-
-// TODO: Create a function to initialize app
-// function init() {
-//     inquirer.prompt(questions)
-//     .then((answers) => fs.writeFileSync('README.md', generateREADME(answers)))
-//     .then(() => console.log('Successfully wrote to README.md'))
-//     .catch((err) => console.error(err));
-// }
+generateMarkdown(data);
 
 function init() {
   //ask all the questions for you readme
@@ -88,7 +75,31 @@ function init() {
 init();
 
 
+// );
 
-// const generateHTML = ({ name, location, github, linkedin }) =>
-//   `markdown stuff`;
+// .then(answers) => {
+//   console.log(answers);
+//   fs.writeFile('generatedREADME.md', generateREADME(answers), (err)) =>
+//   err ? console.log(err) : console.log('Success!')
+// }
+
+
+
+// // TODO: Create a function to write README file
+// function writeToFile(fileName, data) { }
+
+// // TODO: Create a function to initialize app
+// // function init() {
+// //     inquirer.prompt(questions)
+// //     .then((answers) => fs.writeFileSync('README.md', generateREADME(answers)))
+// //     .then(() => console.log('Successfully wrote to README.md'))
+// //     .catch((err) => console.error(err));
+// // }
+
+
+
+
+
+// // const generateHTML = ({ name, location, github, linkedin }) =>
+// //   `markdown stuff`;
 
