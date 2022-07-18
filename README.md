@@ -1,32 +1,4 @@
-`# ${data.title}
 
-## Description
-${data.description}
-
-## Table of Contents
-${data.tableOfContents}
-
-## Installation
-${data.installation}
-
-## Usage
-${data.usage}
-
-## License
-${data.license}
-
-## Contributing
-${data.contributing}
-
-## Tests
-${data.tests}
-
-## Questions
-Github username: ${data.github} <br>
-[github profile link](https://github.com/${data.github}) <br>
-Feel free to direct any questions to ${data.email} 
-`
-<!-- 
 Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:

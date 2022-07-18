@@ -29,12 +29,12 @@ function generateMarkdown(data) {
   ${data.description}
   
   ## Table of Contents
-  - Installation
-  - Usage
-  ${renderLicenseLink(data.license)}
-  - Contributing
-  - Tests
-  - Questions
+  - [Installation](##-Installation)
+  - [Usage](##-Usage)
+  - ${renderLicenseLink(data.license)}
+  - [Contributing](##-Contributing)
+  - [Tests](##-Tests)
+  - [Questions](##-Questions)
   
   ## Installation
   ${data.installation}
@@ -42,7 +42,7 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
   
- ${renderLicenseSection(data.license)}
+ ## ${renderLicenseSection(data.license)}
   
   ## Contributing
   ${data.contributing}
@@ -51,8 +51,7 @@ function generateMarkdown(data) {
   ${data.tests}
   
   ## Questions
-  Github username: ${data.github} <br>
-  [github profile link](https://github.com/${data.github}) <br>
+  Github username: [${data.github}](https://github.com/${data.github}) <br>
   Feel free to direct any questions to ${data.email} 
   `;
 }
