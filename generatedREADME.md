@@ -1,8 +1,8 @@
-# titlte
+# Title of Project
  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
   ## Description
-  escript
+  Description of project goes here.
   
   ## Table of Contents
   - [Installation](#Installation)
@@ -13,21 +13,21 @@
   - [Questions](#Questions)
   
   ## Installation
-  slkjdf
+  node, inquirer, fs
   
   ## Usage
-  sdf
+  Directions for usage go here.
   
   ## License 
     MIT
   
   ## Contributing
-  lksjdf
+  Sara Baqla, Kyle Baca
   
   ## Tests
-  sdf
+  Tests will go here.
   
   ## Questions
-  Github username: [sdf](https://github.com/sdf) <br>
-  Email: sdf 
+  Github username: [missatrox44](https://github.com/missatrox44) <br>
+  Email: missatrox44@gmail.com 
   
