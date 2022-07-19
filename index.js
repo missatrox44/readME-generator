@@ -54,20 +54,21 @@ const questions = [
   },
 ]
 
-//function that builds README from answers
-function init() {
+const init = () => {
   inquirer.prompt(questions)
-  .then((answers) => {
-  fs.writeFile('generatedREADME.md', generateMarkdown(answers), (err)=>
-      err ? console.log(err) : console.log('success!'))
-})
-}
+    .then((answers) => fs.writeFileSync('generatedREADME.md', generateMarkdown(answers)))
+    .then(() => console.log('Success!'))
+    .catch((err) => console.error(err));
+};
 
-// Function call to initialize app
 init();
 
 
-// //alternate code using path
+
+
+
+
+// // //alternate code using path
 // // function to write README file
 // function writeToFile(fileName, data) {
 //   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
@@ -79,3 +80,5 @@ init();
 //       writeToFile("generatedREADME.md", generateMarkdown({...inquirerResponses}))
 //   })
 // }
+
+
